@@ -21,7 +21,7 @@ export const getImageFunction = async(id: number | string) => {
 
   const image = await page.screenshot({
     type: 'jpeg',
-    encoding: 'binary',
+    encoding: 'base64',
   })
 
   await browser.close()
