@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "rayriffy-h-poster-api",
+  "name": "rayriffy-h-api",
   "builds": [{
     "src": "/src/index.ts",
     "use": "@now/node",
