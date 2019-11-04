@@ -1,5 +1,6 @@
 import chrome from 'chrome-aws-lambda'
 import puppeteer from 'puppeteer-core'
+import sharp from 'sharp'
 
 const PAGE_URL = 'https://poster.h.api.rayriffy.com'
 
@@ -19,12 +20,14 @@ export const getImageFunction = async(id: number | string) => {
     waitUntil: 'networkidle0',
   })
 
-  const file = await page.screenshot({
+  const image = await page.screenshot({
     type: 'png',
-    encoding: 'base64',
+    encoding: 'binary',
   })
 
   await browser.close()
 
-  return file
+  const compressedImage = await sharp(image).resize(500).png().toBuffer().toString()
+
+  return compressedImage
 }
