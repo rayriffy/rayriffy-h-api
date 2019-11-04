@@ -15,7 +15,9 @@ export const getImageFunction = async(id: number | string) => {
   })
 
   const page = await browser.newPage()
-  await page.goto(`${PAGE_URL}/encode/${id}`)
+  await page.goto(`${PAGE_URL}/encode/${id}`, {
+    waitUntil: 'networkidle0',
+  })
 
   const file = await page.screenshot({
     type: 'png',

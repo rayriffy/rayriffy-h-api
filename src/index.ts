@@ -32,7 +32,7 @@ server.get('/encode/:id', async(req, res) => {
       code: 201,
       response: {
         message: 'image encoded',
-        data: image,
+        data: `data:image/png;base64,${image}`,
       },
     }
   
