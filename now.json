@@ -3,14 +3,14 @@
   "name": "rayriffy-h-poster-api",
   "builds": [{
     "src": "/src/index.ts",
-    "use": "@now/node"
+    "use": "@now/node",
+    "config": {
+      "maxLambdaSize": "40mb"
+    }
   }],
   "routes": [{
     "src": "/(.*)",
     "dest": "/src/index.ts"
   }],
-  "env": {
-    "ENGINE_API_KEY": "@maimai-apollo-engine-key"
-  },
   "regions": ["all"]
 }
