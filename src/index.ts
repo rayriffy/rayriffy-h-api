@@ -9,12 +9,14 @@ const server = express()
 server.use(cors())
 
 server.get('/', async(req, res) => {
-  const response: IResponse<null> = {
+  const response: IResponse<{docs: string}> = {
     status: 'success',
     code: 201,
     response: {
       message: 'hello',
-      data: null,
+      data: {
+        docs: 'https://github.com/rayriffy/rayriffy-h-api#api',
+      },
     },
   }
 
