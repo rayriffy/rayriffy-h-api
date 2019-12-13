@@ -1,8 +1,8 @@
 import express from 'express'
 
-import encodeRoute from './apis/encode/services'
-import galleryRoute from './apis/gallery/services'
-import relatedRoute from './apis/related/services'
+import encodeRoute from './api/encode/services'
+import galleryRoute from './api/gallery/services'
+import relatedRoute from './api/related/services'
 
 const router = express.Router()
 
