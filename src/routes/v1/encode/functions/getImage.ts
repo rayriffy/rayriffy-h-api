@@ -3,7 +3,7 @@ import puppeteer from 'puppeteer-core'
 
 const PAGE_URL = 'https://poster.h.api.rayriffy.com'
 
-export const getImageFunction = async(id: number | string) => {
+export const getImageFunction = async (id: number | string) => {
   const browser = await puppeteer.launch({
     args: chrome.args,
     executablePath: await chrome.executablePath,

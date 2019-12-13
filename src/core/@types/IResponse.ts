@@ -3,6 +3,6 @@ export interface IResponse<T> {
   code: number
   response: {
     message: string
-    data: T
+    data?: T
   }
 }

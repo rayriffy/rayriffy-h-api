@@ -1,15 +1,16 @@
 import cors from 'cors'
 import express from 'express'
 
-import { IResponse } from './@types/IResponse'
-import { getImageFunction } from './functions/getImage'
+import { IResponse } from './core/@types/IResponse'
+
+import { v1 } from './routes'
 
 const server = express()
 
 server.use(cors())
 
-server.get('/', async(req, res) => {
-  const response: IResponse<{docs: string}> = {
+server.get('/', async (_, res) => {
+  const response: IResponse<{ docs: string }> = {
     status: 'success',
     code: 201,
     response: {
@@ -23,45 +24,14 @@ server.get('/', async(req, res) => {
   return res.status(200).send(response)
 })
 
-server.get('/encode/:id', async(req, res) => {
-  try {
-    const {id} = req.params
+server.use('/v1', v1)
 
-    const image = await getImageFunction(id)
-
-    const response: IResponse<string> = {
-      status: 'success',
-      code: 201,
-      response: {
-        message: 'image encoded',
-        data: `data:image/jpeg;base64,${image}`,
-      },
-    }
-  
-    return res.status(200).send(response)
-  } catch(e) {
-    console.log(e)
-
-    const response: IResponse<any> = {
-      status: 'failed',
-      code: 407,
-      response: {
-        message: 'puppeteer crash',
-        data: e,
-      },
-    }
-
-    return res.status(400).send(response)
-  }
-})
-
-server.all('*', (req, res) => {
-  const response: IResponse<null> = {
+server.all('*', (_, res) => {
+  const response: IResponse<never> = {
     status: 'failed',
-    code: 405,
+    code: 404,
     response: {
-      message: 'route not found / invalid method',
-      data: null,
+      message: 'route not found',
     },
   }
 
