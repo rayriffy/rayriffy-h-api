@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { IRawHentai } from '../../../../core/@types/IRawHentai'
+import { IRawHentai } from '../../../core/@types/IRawHentai'
 import { IRelated } from '../@types/IRelated'
 
 export const getRelated = async (

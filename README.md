@@ -98,9 +98,9 @@ Get JSON format of NHentai gallery
 
 Returns a 200 HTTP status code and a JSON object with the following data.
 
-| Property      | Type                                  | Description             |
-| ------------- | ------------------------------------- | ----------------------- |
-| response.data | [IHentai](src/core/@types/IHentai.ts) | Gallery of requested ID |
+| Property      | Type                                            | Description             |
+| ------------- | ----------------------------------------------- | ----------------------- |
+| response.data | [IHentai](src/routes/v1/core/@types/IHentai.ts) | Gallery of requested ID |
 
 <details>
 <summary>JSON</summary>
@@ -224,9 +224,9 @@ Get 5 related galleries by refering to gallery ID
 
 Returns a 200 HTTP status code and a JSON object with the following data.
 
-| Property      | Type                                    | Description                |
-| ------------- | --------------------------------------- | -------------------------- |
-| response.data | [IHentai](src/core/@types/IHentai.ts)[] | Array of related galleries |
+| Property      | Type                                              | Description                |
+| ------------- | ------------------------------------------------- | -------------------------- |
+| response.data | [IHentai](src/routes/v1/core/@types/IHentai.ts)[] | Array of related galleries |
 
 <details>
 <summary>JSON</summary>

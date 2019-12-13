@@ -2,7 +2,7 @@ import express from 'express'
 
 import { getImageFunction } from '../functions/getImage'
 
-import { IResponse } from '../../../../core/@types/IResponse'
+import { IResponse } from '../../../core/@types/IResponse'
 
 const router = express.Router()
 

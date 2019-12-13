@@ -1,7 +1,7 @@
 import cors from 'cors'
 import express from 'express'
 
-import { IResponse } from './core/@types/IResponse'
+import { IResponse } from './routes/v1/core/@types/IResponse'
 
 import { v1 } from './routes'
 

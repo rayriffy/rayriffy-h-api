@@ -1,10 +1,10 @@
 import express from 'express'
 
-import { rawProcessor } from '../../../../core/functions/rawProcessor'
-import { getHentai } from '../functions/getHentai'
+import { rawProcessor } from '../../../core/functions/rawProcessor'
+import { getRelated } from '../functions/getRelated'
 
-import { IHentai } from '../../../../core/@types/IHentai'
-import { IResponse } from '../../../../core/@types/IResponse'
+import { IHentai } from '../../../core/@types/IHentai'
+import { IResponse } from '../../../core/@types/IResponse'
 
 const router = express.Router()
 
@@ -12,14 +12,14 @@ router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
 
-    const data = await getHentai(id)
+    const data = await getRelated(id)
 
-    const response: IResponse<IHentai> = {
+    const response: IResponse<IHentai[]> = {
       status: 'success',
       code: 201,
       response: {
-        message: 'gallery obtained',
-        data: rawProcessor(data),
+        message: 'related gallery obtained',
+        data: data.map(o => rawProcessor(o)),
       },
     }
 
