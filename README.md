@@ -106,7 +106,7 @@ Returns a 200 HTTP status code and a JSON object with the following data.
 <summary>JSON</summary>
 
 ```json
-
+{
   "status": "success",
   "code": 201,
   "response": {
@@ -202,6 +202,7 @@ Returns a 200 HTTP status code and a JSON object with the following data.
       ]
     }
   }
+}
 ```
 </details>
 
@@ -230,7 +231,8 @@ Returns a 200 HTTP status code and a JSON object with the following data.
 <details>
 <summary>JSON</summary>
 
-```json{
+```json
+{
   "status": "success",
   "code": 201,
   "response": {
