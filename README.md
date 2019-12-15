@@ -50,7 +50,7 @@ Render a SFW version of an image that can be decodable
 
 **HTTP request**
 
-`GET /v1/encode/:id`
+`GET /encode/:id`
 
 **Path parameters**
 
@@ -86,7 +86,7 @@ Get JSON format of NHentai gallery
 
 **HTTP request**
 
-`GET /v1/encode/:id`
+`GET /encode/:id`
 
 **Path parameters**
 
@@ -212,7 +212,7 @@ Get 5 related galleries by refering to gallery ID
 
 **HTTP request**
 
-`GET /v1/encode/:id`
+`GET /encode/:id`
 
 **Path parameters**
 
