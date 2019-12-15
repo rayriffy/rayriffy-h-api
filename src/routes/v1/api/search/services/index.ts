@@ -1,19 +1,19 @@
 import express from 'express'
 
-import { getHentai } from '../functions/getHentai'
+import { getSearch } from '../functions/getSearch'
 
 import { IHentai } from '../../../core/@types/IHentai'
 import { IResponse } from '../../../core/@types/IResponse'
 
 const router = express.Router()
 
-router.get('/:id', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const { id } = req.params
+    const { query, page } = req.query
 
-    const data = await getHentai(id)
+    const data = await getSearch(query, page)
 
-    const response: IResponse<IHentai> = {
+    const response: IResponse<IHentai[]> = {
       status: 'success',
       code: 201,
       response: {
@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
   }
 })
 
-router.all('/:id', (_, res) => {
+router.all('/', (_, res) => {
   const response: IResponse<never> = {
     status: 'failed',
     code: 404,

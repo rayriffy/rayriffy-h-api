@@ -1,13 +1,12 @@
 import express from 'express'
 
-import encodeRoute from './api/encode/services'
-import galleryRoute from './api/gallery/services'
-import relatedRoute from './api/related/services'
+import { encode, gallery, related, search } from './api'
 
 const router = express.Router()
 
-router.use('/encode', encodeRoute)
-router.use('/gallery', galleryRoute)
-router.use('/related', relatedRoute)
+router.use('/encode', encode)
+router.use('/gallery', gallery)
+router.use('/related', related)
+router.use('/search', search)
 
 export default router
