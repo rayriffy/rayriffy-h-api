@@ -86,7 +86,7 @@ Get JSON format of NHentai gallery
 
 **HTTP request**
 
-`GET /encode/:id`
+`GET /gallery/:id`
 
 **Path parameters**
 
@@ -212,7 +212,7 @@ Get 5 related galleries by refering to gallery ID
 
 **HTTP request**
 
-`GET /encode/:id`
+`GET /related/:id`
 
 **Path parameters**
 
