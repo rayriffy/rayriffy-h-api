@@ -1,3 +1,5 @@
+import fetch from 'node-fetch'
+
 import { IRawHentai } from '../../../core/@types/IRawHentai'
 import { IRelated } from '../@types/IRelated'
 

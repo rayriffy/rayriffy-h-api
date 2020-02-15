@@ -1,3 +1,5 @@
+import fetch from 'node-fetch'
+
 import { rawProcessor } from '../../../core/functions/rawProcessor'
 
 import { IHentai } from '../../../core/@types/IHentai'
