@@ -1,5 +1,3 @@
-import axios from 'axios'
-
 import { rawProcessor } from '../../../core/functions/rawProcessor'
 
 import { IHentai } from '../../../core/@types/IHentai'
@@ -15,9 +13,9 @@ export const getSearch = async (
   query: string,
   page: number | string = 1
 ): Promise<IHentai[]> => {
-  const res = await axios.get<IAPIResponse>(
+  const res: IAPIResponse = await fetch(
     `https://nhentai.net/api/galleries/search?query="${query}"&page=${page}`
-  )
+  ).then(o => o.json())
 
-  return res.data.result.map(o => rawProcessor(o))
+  return res.result.map(o => rawProcessor(o))
 }
